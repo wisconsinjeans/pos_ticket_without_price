@@ -18,7 +18,7 @@ msgstr ""
 #. openerp-web
 #: code:addons/pos_ticket_without_price/static/src/xml/pos.xml:7
 #, python-format
-msgid "Imprimir recibo regalo"
+msgid "Print Ticket Without Price"
 msgstr ""
 
 #. module: pos_ticket_without_price
