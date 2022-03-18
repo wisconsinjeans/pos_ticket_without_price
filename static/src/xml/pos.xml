@@ -48,6 +48,19 @@
             <attribute name="class">oe_hidden</attribute>
         </xpath>
 
+        <xpath expr="//t[@t-if='line.discount !== 0']/div" position="attributes" >
+            <attribute name="class">oe_hidden</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-if='receipt.total_discount']/div" position="attributes" >
+            <attribute name="class">oe_hidden</attribute>
+        </xpath>
+
+        <xpath expr="//t[@t-if='receipt.cashier']/div" position="replace" >
+            <div>--------------------------------</div>
+            <div>Atendido<t t-esc="receipt.cashier" /></div>
+        </xpath>
+
         <xpath expr="//t[@t-if='isTaxIncluded']" position="replace" />
         <xpath expr="//t[@t-if='!isTaxIncluded']" position="replace" />
         <xpath expr="//t[@t-foreach='receipt.paymentlines']" position="replace" />
