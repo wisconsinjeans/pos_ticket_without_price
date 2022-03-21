@@ -44,6 +44,10 @@
             <attribute name="class">oe_hidden</attribute>
         </xpath>
 
+        <xpath expr="//div[hasclass('pos-receipt-left-padding')]" position="attributes">
+            <attribute name="class">oe_hidden</attribute>
+        </xpath>
+
         <xpath expr="//div[hasclass('receipt-change')]" position="attributes">
             <attribute name="class">oe_hidden</attribute>
         </xpath>
@@ -56,14 +60,20 @@
             <attribute name="class">oe_hidden</attribute>
         </xpath>
 
-        <xpath expr="//t[@t-if='receipt.cashier']/div" position="replace" >
-            <div>--------------------------------</div>
-            <div>Atendido<t t-esc="receipt.cashier" /></div>
-        </xpath>
+        
 
         <xpath expr="//t[@t-if='isTaxIncluded']" position="replace" />
         <xpath expr="//t[@t-if='!isTaxIncluded']" position="replace" />
         <xpath expr="//t[@t-foreach='receipt.paymentlines']" position="replace" />
+
+         <xpath expr="//div[hasclass('pos-receipt-order-data')]" position="replace">
+
+                <div class="pos-receipt-order-data">
+                    <div>Ticket número <span t-esc="receipt.name" /> </div>
+                    <div><t t-esc="receipt.date.localestring" /></div>
+                </div>
+            </xpath>
+       
     </t>
 
     <t t-inherit="point_of_sale.ReceiptScreen" t-inherit-mode="extension">
@@ -73,6 +83,8 @@
             </div>
         </xpath>
 
+
+        
         <xpath expr="//div[hasclass('pos-receipt-container')]" position="inside">
             <OrderReceiptWithoutPrice
                 order="currentOrder"
