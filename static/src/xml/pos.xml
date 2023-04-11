@@ -9,18 +9,18 @@
     >
         <xpath expr="//div[hasclass('pos-receipt')]" position="attributes">
             <attribute name="class">pos-receipt pos-receipt-without-price</attribute>
-            <attribute name="style">display: none;margin-top:20px;margin-bottom:25px;margin-left:20px;margin-right:15px;</attribute>
+            <attribute name="style">display: none;margin-top:20px;margin-bottom:25px;</attribute>
         </xpath>
 
         <xpath expr="//div[hasclass('pos-receipt-contact')]" position="attributes">
-            <attribute name="style">margin-top:20px;margin-bottom:25px;margin-left:20px;margin-right:15px;</attribute>
+            <attribute name="style">margin-top:20px;margin-bottom:25px;</attribute>
         </xpath>
 
-        <!-- <xpath expr="//div[hasclass('orderlines')]" position="attributes">
-            <attribute name="style">margin-left:20px;margin-right:15px;</attribute>
-        </xpath> -->
+        <xpath expr="//div[hasclass('orderlines')]" position="attributes">
+            <attribute name="style">padding-right: 7px; margin-left:1px;margin-right:5px;</attribute>
+        </xpath>
 
-        <xpath expr="//div[hasclass('pos-receipt-amount')]" position="attributes">
+        <!-- <xpath expr="//div[hasclass('pos-receipt-amount')]" position="attributes">
             <attribute name="style">margin-left:20px;margin-right:15px;</attribute>
         </xpath>
 
@@ -42,14 +42,13 @@
 
         <xpath expr="//div[hasclass('pos-receipt-order-data')]" position="attributes">
             <attribute name="style">margin-left:20px;margin-right:15px;</attribute>
-        </xpath>
-
+        </xpath> -->
 
         <xpath expr="//t[@t-if='receipt.total_discount']/div" position="attributes" >
             <attribute name="class">oe_hidden</attribute>
         </xpath>
 
-        <xpath expr="//div[hasclass('pos-receipt-amount')]" position="attributes">
+        <!-- <xpath expr="//div[hasclass('pos-receipt-amount')]" position="attributes">
             <attribute name="style">margin-left:20px;margin-right:15px;</attribute>
         </xpath>
 
@@ -59,8 +58,7 @@
 
         <xpath expr="//t[@t-foreach='receipt.paymentlines']/div" position="attributes">
             <attribute name="style">margin-left:20px;margin-right:15px;</attribute>
-        </xpath>
-
+        </xpath> -->
 
         <xpath expr="//div/t/t[@t-if='isSimple(line)']/div/span" position="replace">
             <span class="pos-receipt-right-align">
